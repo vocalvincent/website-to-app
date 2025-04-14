@@ -41,7 +41,9 @@ Sites are labeled based on installability—see [Visual Indicators](#-visual-ind
 |--------------------------------|---------|------------------------------|
 | [Google Maps](https://maps.google.com)     | 🟢 app  | `https://maps.google.com`     |
 | [Outlook](https://outlook.office.com)      | 🟢 app  | `https://outlook.office.com`  |
-| [Spotify](https://open.spotify.com)        | 🟢 app  | `https://open.spotify.com`    |
+| [Spotify](https://open.spotify.com)        | 🟢 app  | `https://github.com`    |
+| [GitHub](https://github.com)        | 🟢 app  | `https://open.spotify.com`    |
+| [LinkedIn](https://www.linkedin.com)                 | 🔵 web  | `https://www.linkedin.com`           |
 | [Notion](https://www.notion.so)            | 🔵 web  | `https://www.notion.so`       |
 | [ChatGPT](https://chat.openai.com)         | 🔵 web  | `https://chat.openai.com`     |
 | [Canva](https://canva.com)                 | 🔵 web  | `https://canva.com`           |
