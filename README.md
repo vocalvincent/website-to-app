@@ -32,7 +32,7 @@ No unnecessary features, settings, or permissions. Just works.
 
 ---
 
-## 🛠 Use Cases
+## 🌐 Use Cases
 
 Below are some example sites you can launch with **Website to App**.  
 Sites are labeled based on installability—see [Visual Indicators](#-visual-indicators) for details.
