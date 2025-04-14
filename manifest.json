@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Website to App",
+  "version": "1.0",
+  "description": "Open websites as standalone apps.",
+  "permissions": [
+    "activeTab"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/16.png",
+      "48": "icons/48.png",
+      "128": "icons/128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "author": "Vincent VanHatten",
+  "homepage_url": "https://vincentvh.com",
+  "license": "CC BY-NC-ND 4.0"
+}
