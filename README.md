@@ -37,14 +37,14 @@ No unnecessary features, settings, or permissions. Just works.
 Below are some example sites you can launch with **Website to App**.  
 Sites are labeled based on installability—see [Visual Indicators](#-visual-indicators) for details.
 
-| Site           | Type    | URL                          |
-|----------------|---------|------------------------------|
-| Google Maps    | 🟢 app  | `https://maps.google.com`     |
-| Outlook        | 🟢 app  | `https://outlook.office.com`  |
-| Spotify        | 🟢 app  | `https://open.spotify.com`    |
-| Notion         | 🔵 web  | `https://www.notion.so`       |
-| ChatGPT        | 🔵 web  | `https://chat.openai.com`     |
-| Canva          | 🔵 web  | `https://canva.com`           |
+| Site                           | Type    | URL                          |
+|--------------------------------|---------|------------------------------|
+| [Google Maps](https://maps.google.com)     | 🟢 app  | `https://maps.google.com`     |
+| [Outlook](https://outlook.office.com)      | 🟢 app  | `https://outlook.office.com`  |
+| [Spotify](https://open.spotify.com)        | 🟢 app  | `https://open.spotify.com`    |
+| [Notion](https://www.notion.so)            | 🔵 web  | `https://www.notion.so`       |
+| [ChatGPT](https://chat.openai.com)         | 🔵 web  | `https://chat.openai.com`     |
+| [Canva](https://canva.com)                 | 🔵 web  | `https://canva.com`           |
 
 ---
 
