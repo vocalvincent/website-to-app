@@ -17,7 +17,7 @@ Easily identify app support:
 - 🔵 **web** badge: Site doesn't support install, but still opens standalone
 
 ### 🔹 Quick Toolbar Access
-Just click the extension icon on any site you want to launch as an app. One click = one window.
+Just click the extension icon on any site you want to launch as an app.
 
 ### 🔹 Minimalist, Lightweight
 No unnecessary features, settings, or permissions. Just works.
