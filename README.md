@@ -2,14 +2,14 @@
 
 **Website to App** is a productivity-focused Chrome extension that lets you open any website in a standalone window—giving it the feel of a desktop application.
 
-Whether you're trying to declutter your workspace, give your favorite tools their own environment, or just want a cleaner way to interact with the web, Website to App gives you the flexibility to treat the web like a native desktop experience.
+Whether the website is a Progressive Web App (PWA) or not, this extension allows you to run it outside the clutter of your browser tabs and bookmarks for a more focused, immersive experience.
 
 ---
 
 ## 🚀 Features
 
 ### 🔹 App-like Interface for Any Website
-Launch any site in a clean, standalone window—without browser tabs, address bar, or distractions. Perfect for tools, social platforms, messaging, or your daily web apps.
+Launch any site in a clean, standalone window—without browser tabs, address bar, or distractions. Perfect for tools, social platforms, messaging, or your daily websites.
 
 ### 🔹 Visual Indicators
 Easily identify app support:
@@ -26,7 +26,7 @@ No unnecessary features, settings, or permissions. Just works.
 
 ## 📦 Installation
 
-1. Install from the [Chrome Web Store](https://chrome.google.com/webstore/detail/kfkgofimfljhalnilhmhhokkfalaflod) *(once approved)*
+1. Install from the [Chrome Web Store](https://chrome.google.com/webstore/detail/kfkgofimfljhalnilhmhhokkfalaflod)
 2. Pin the extension to your toolbar
 3. Open any site and click the icon to launch it in app mode
 
