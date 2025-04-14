@@ -34,11 +34,17 @@ No unnecessary features, settings, or permissions. Just works.
 
 ## 🛠 Use Cases
 
-- Email platforms like Gmail or Outlook
-- Note-taking tools like Notion or Evernote
-- Messengers like Slack, Discord, WhatsApp Web
-- Project managers like Trello, Asana, or ClickUp
-- Anything else you want to treat like a native app
+Below are some example sites you can launch with **Website to App**.  
+Sites are labeled based on installability—see [Visual Indicators](#-visual-indicators) for details.
+
+| Site           | Type    | URL                          |
+|----------------|---------|------------------------------|
+| Google Maps    | 🟢 app  | `https://maps.google.com`     |
+| Outlook        | 🟢 app  | `https://outlook.office.com`  |
+| Spotify        | 🟢 app  | `https://open.spotify.com`    |
+| Notion         | 🔵 web  | `https://www.notion.so`       |
+| ChatGPT        | 🔵 web  | `https://chat.openai.com`     |
+| Canva          | 🔵 web  | `https://canva.com`           |
 
 ---
 
