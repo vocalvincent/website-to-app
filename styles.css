@@ -1,92 +1,182 @@
+:root {
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --text: #111827;
+  --muted: #5b6473;
+  --border: #e5e7eb;
+  --primary: #1d9bf0;
+  --primary-hover: #1582c9;
+  --success: #14a44d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
-  background-color: #f3f4f6;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  color: #1f2937;
-  min-width: 320px;
+  min-width: 340px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .container {
-  background-color: white;
-  padding: 10px;
-  margin: 16px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin: 14px;
+  padding: 14px;
+  border-radius: 14px;
+  background: var(--card);
+  box-shadow: 0 8px 24px rgba(17, 24, 39, 0.08);
 }
 
 .header {
   display: flex;
+  gap: 10px;
   align-items: center;
-  width: 100%;
+  margin-bottom: 12px;
 }
 
 .icon-circle {
-  width: 50px;
-  height: 50px;
-  border-radius: 16px;
-  background-color: #e3e8f0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 10px;
-  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #eef3ff;
+  display: grid;
+  place-items: center;
 }
 
 .icon-circle img {
-  width: 40px;
-  height: 40px;
-}
-
-.info {
-  flex: 1;
+  width: 34px;
+  height: 34px;
 }
 
 .info h1 {
-  font-size: 18px;
-  margin: 0;
-  color: #4b5563;
+  margin: 0 0 3px;
+  font-size: 17px;
 }
 
 .info p {
+  margin: 0;
+  color: var(--muted);
   font-size: 13px;
-  margin: 0 0 5px 0;
-  color: #4b5563;
-  overflow: hidden;
+  line-height: 1.35;
 }
 
-a {
-  color: #00a6ed;
-  text-decoration: none;
+.status-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #fafbff;
 }
 
-a:hover {
-  text-decoration: underline;
+.eyebrow {
+  margin: 0 0 4px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #6b7280;
 }
 
-button#installBtn {
-  margin-top: 5px;
-  background-color: #00a6ed;
-  color: white;
-  border: none;
-  padding: 10px 16px;
+.status-title {
+  margin: 0;
+  font-weight: 600;
   font-size: 14px;
-  border-radius: 8px;
-  cursor: pointer;
-  width: 100%;
-  transition: background-color 0.2s ease;
 }
 
-button#installBtn:hover {
-  background-color: #0094d4;
+.status-hint {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+button {
+  width: 100%;
+  border: 0;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: background-color 0.18s ease, transform 0.08s ease;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.primary-btn {
+  background: var(--primary);
+  color: #fff;
+}
+
+.primary-btn:hover:not(:disabled) {
+  background: var(--primary-hover);
+}
+
+.primary-btn:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+.secondary-btn {
+  margin-top: 8px;
+  background: #e9edf5;
+  color: #1f2937;
+}
+
+.secondary-btn:hover {
+  background: #dde5f2;
 }
 
 .status-text {
-  margin-top: 12px;
-  font-size: 13px;
-  text-align: center;
+  min-height: 18px;
+  margin: 10px 2px 0;
+  font-size: 12px;
   color: #374151;
+}
+
+.recent-section {
+  margin-top: 10px;
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}
+
+.recent-section h2 {
+  margin: 0 0 6px;
+  font-size: 13px;
+}
+
+#recentList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.recent-item {
+  width: 100%;
+  background: #f6f8fc;
+  border: 1px solid #e5e9f0;
+  border-radius: 8px;
+  padding: 8px;
+  text-align: left;
+  font-size: 12px;
+  color: #1f2937;
+}
+
+.recent-item:hover {
+  background: #edf3ff;
+}
+
+.hidden {
+  display: none;
+}
+
+.success {
+  color: var(--success);
 }

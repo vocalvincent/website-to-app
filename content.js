@@ -1,62 +1,65 @@
 let deferredPrompt = null;
 
-function isPWAInstalled() {
+function isAppModeActive() {
   return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
 }
 
 function setBadge(text, color) {
-  chrome.runtime.sendMessage({ action: "setBadge", text, color });
+  chrome.runtime.sendMessage({ action: 'setBadge', text, color });
 }
 
-function checkAndSetBadge() {
-  if (isPWAInstalled()) {
-    setBadge("", "#cccccc"); // No badge if already installed
+function refreshBadge() {
+  if (isAppModeActive()) {
+    setBadge('', '#cccccc');
   } else if (deferredPrompt) {
-    setBadge("app", "#00d26a");
+    setBadge('app', '#00d26a');
   } else {
-    setBadge("web", "#00a6ed");
+    setBadge('web', '#00a6ed');
   }
 }
 
-window.addEventListener("beforeinstallprompt", (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  checkAndSetBadge();
+window.addEventListener('beforeinstallprompt', (event) => {
+  event.preventDefault();
+  deferredPrompt = event;
+  refreshBadge();
 });
 
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    checkAndSetBadge();
-  }, 500); // allow beforeinstallprompt to fire
+window.addEventListener('load', () => {
+  setTimeout(refreshBadge, 500);
 });
 
 chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
-  if (msg.action === "checkPWAStatus") {
-    if (isPWAInstalled()) {
-      sendResponse({ status: "installed" });
+  if (msg.action === 'checkAppMode') {
+    if (isAppModeActive()) {
+      sendResponse({ status: 'installed' });
     } else if (deferredPrompt) {
-      sendResponse({ status: "can_install" });
+      sendResponse({ status: 'can_install' });
     } else {
-      sendResponse({ status: "fallback" });
+      sendResponse({ status: 'fallback' });
     }
+    return;
   }
 
-  if (msg.action === "triggerInstall") {
+  if (msg.action === 'triggerAppAction') {
     if (deferredPrompt) {
       deferredPrompt.prompt();
       deferredPrompt.userChoice.then((choice) => {
-        if (choice.outcome === "accepted") {
-          sendResponse({ message: "✅ Web app installation started." });
+        if (choice.outcome === 'accepted') {
+          sendResponse({ success: true, message: 'Install prompt opened. Follow Chrome’s steps to finish setup.' });
         } else {
-          sendResponse({ message: "⚠️ Web app installation dismissed." });
+          sendResponse({ success: false, message: 'Install canceled. You can still open it in Standard App Mode.' });
         }
       });
-    } else if (isPWAInstalled()) {
-      sendResponse({ message: "✅ Web app is already installed." });
-    } else {
-      chrome.runtime.sendMessage({ action: "openStandalone", url: window.location.href });
-      sendResponse({ message: "🆗 Opened in standalone window." });
+      return true;
     }
-    return true;
+
+    if (isAppModeActive()) {
+      chrome.runtime.sendMessage({ action: 'openStandalone', url: window.location.href });
+      sendResponse({ success: true, message: 'Opened in its own app window.' });
+      return;
+    }
+
+    chrome.runtime.sendMessage({ action: 'openStandalone', url: window.location.href });
+    sendResponse({ success: true, message: 'Opened in Standard App Mode.' });
   }
 });
