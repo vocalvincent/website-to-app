@@ -1,10 +1,11 @@
 {
   "manifest_version": 3,
   "name": "Website to App",
-  "version": "1.0",
-  "description": "Open websites as standalone apps.",
+  "version": "1.1",
+  "description": "A simple way to turn websites into desktop-like apps.",
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "storage"
   ],
   "action": {
     "default_popup": "popup.html",

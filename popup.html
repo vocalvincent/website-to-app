@@ -7,18 +7,31 @@
 </head>
 <body>
   <div class="container">
-    <div class="header">
+    <header class="header">
       <div class="icon-circle">
-        <img src="icon.svg" alt="App Icon" />
+        <img src="icon.svg" alt="Website to App" />
       </div>
       <div class="info">
         <h1>Website to App</h1>
-        <p>Open websites as standalone apps.</p>
-	<p>❓<a href="https://business.adobe.com/blog/basics/progressive-web-app-examples" target="_blank">What are PWAs?</a><br>🔗 <a href="https://vincentvh.com" target="_blank">vincentvh.com</a><p>
+        <p>Turn this website into a desktop-like app in one click.</p>
       </div>
-    </div>
-    <button id="installBtn">Loading...</button>
-    <p id="message" class="status-text">Checking website status...</p>
+    </header>
+
+    <section class="status-card">
+      <p class="eyebrow">This page</p>
+      <p id="statusTitle" class="status-title">Checking this website…</p>
+      <p id="statusHint" class="status-hint">We’ll choose the best way to open it like an app.</p>
+    </section>
+
+    <button id="primaryActionBtn" class="primary-btn" disabled>Loading…</button>
+    <button id="secondaryActionBtn" class="secondary-btn hidden">Open Last App Again</button>
+
+    <p id="message" class="status-text" role="status" aria-live="polite"></p>
+
+    <section id="recentSection" class="recent-section hidden">
+      <h2>Recent apps</h2>
+      <ul id="recentList"></ul>
+    </section>
   </div>
   <script src="popup.js"></script>
 </body>
